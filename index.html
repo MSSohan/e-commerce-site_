@@ -397,7 +397,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                            <p>© 2019 Flexed Design by<a href="https://html.design/"> Free Html Template</a></p>
+                            <p>© <span id="year"></span> Flexed Design by<a href="https://github.com/mssohan/"> CodeG</a></p>
                         </div>
                     </div>
                 </div>
@@ -417,6 +417,14 @@
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentYear = new Date().getFullYear();
+            document.getElementById("year").innerText = currentYear;
+        });
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $("#sidebar").mCustomScrollbar({
