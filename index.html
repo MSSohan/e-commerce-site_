@@ -319,7 +319,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="yoga_box">
-                                <figure><img src="images/yogoimg.jpg" alt="#" /></figure>
+                                <figure><img id="thumbnail" src="images/yogoimg.jpg" /></figure>
+                                <div id="youtube-video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jEjhDcUIwrA?si=IoGmnz0t_Q-lrbeX" frameborder="0" allowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -417,6 +420,21 @@
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <script src="js/jquery-3.0.0.min.js"></script>
+
+    <!-- JavaScript to show video on image click -->
+    <script>
+        // Get references to the image and video container
+        var thumbnail = document.getElementById('thumbnail');
+        var videoContainer = document.getElementById('youtube-video');
+
+        // Add click event listener to the image
+        thumbnail.addEventListener('click', function() {
+            // Show the video container
+            videoContainer.style.display = 'block';
+            // Hide the image
+            thumbnail.style.display = 'none';
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
