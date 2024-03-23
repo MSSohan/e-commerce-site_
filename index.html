@@ -386,6 +386,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padddd">
                         <div class="map_section">
                             <div id="map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196.86852294698542!2d145.0278883185099!3d-37.86271520140476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad669fb16d56ab7%3A0xd09132bbba12ebda!2sFlexed!5e0!3m2!1sen!2sbd!4v1711236601978!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
                             </div>
                         </div>
                     </div>
@@ -464,30 +465,29 @@
     </script>
 
     <script>
-        // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-        // Australia.
+        // Initialize and add the map
         function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 11,
-                center: {
-                    lat: 40.645037,
-                    lng: -73.880224
-                },
+            // The location of Uluru
+            const flexed = { lat: -37.8627152, lng: 145.0278883 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: flexed,
             });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+            position: flexed,
+            map: map,
+            });
+        }  
 
-            var image = 'images/maps-and-flags.png';
-            var beachMarker = new google.maps.Marker({
-                position: {
-                    lat: 40.645037,
-                    lng: -73.880224
-                },
-                map: map,
-                icon: image
-            });
+        #map {
         }
     </script>
+
     <!-- google map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
+        </script>
     <!-- end google map js -->
 
 </body>
